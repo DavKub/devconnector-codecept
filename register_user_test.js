@@ -6,7 +6,7 @@
 // User setup
 const url = 'https://still-hollows-58221.herokuapp.com';
 const registgerBtn = '//*[@id="root"]/section/form/input';
-const name = 'Test11';
+const name = 'Test-000';
 const password = '123456';
 
 Feature('Register NEW user');
@@ -32,7 +32,7 @@ Scenario(
       // Desired outcome
       I.see(`Welcome ${name}`);
       console.log(
-        `Registration has been successful, we created new user ${name}.`
+        `Task SUCCESSFUL - Registration has been completed, we created new user ${name}.`
       );
     } else {
       // NOT desired outcome
@@ -68,10 +68,12 @@ Scenario(
     if (!grabbedUrl.includes('/dashboard')) {
       // Desired outcome
       const grabbedAlert = await I.grabTextFrom('.alert'); // Grab text from Bootstrap's alert class element
-      console.log(grabbedAlert);
+      console.log(
+        `Task SUCCESSFUL - Registration failed with following message: ${grabbedAlert}`
+      );
     } else {
       // NOT desired outcome
-      console.log('Registration has been successful, we created new user.');
+      console.log(`Task FAILED - Test was able to create new user: "${name}"`);
     }
   }
 );
