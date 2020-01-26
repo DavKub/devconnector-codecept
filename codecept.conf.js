@@ -6,10 +6,9 @@ setHeadlessWhen(process.env.HEADLESS);
 
 exports.config = {
   tests: './*_test.js',
-  output: './output',
   helpers: {
     Puppeteer: {
-      url: 'https://still-hollows-58221.herokuapp.com/',
+      url: '',
       show: true
     }
   },
@@ -27,4 +26,4 @@ exports.config = {
       enabled: true
     }
   }
-}
+};
